@@ -21,30 +21,35 @@ header {
   font-size: 16px;
   font-weight: 700;
 }
-.quiz-container{
-    background-color: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.quiz-container {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.question{
-background-color: #0f172a;
-padding: 20px;
-border-radius: 10px;
+.question {
+  background-color: #0f172a;
+  padding: 20px;
+  border-radius: 10px;
 }
-.question-text{
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 20px;
+.question-text {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 20px;
 }
-.options-answer{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.options-answer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-.options-answer button{
-    height: 40px;
+.options-answer button {
+  height: 40px;
+}
+.option.active {
+  background-color: #22c55e;
+  color: white;
+  font-weight: bold;
 }

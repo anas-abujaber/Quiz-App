@@ -1,0 +1,23 @@
+body {
+  background-color: #0f172a;
+  color: white;
+}
+.container {
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+  font-size: 20px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#pass-mark {
+  background-color: green;
+  padding: 5px;
+  border-radius: 10px;
+  color: black;
+  font-size: 16px;
+  font-weight:700;
+}

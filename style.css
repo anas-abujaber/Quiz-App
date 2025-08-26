@@ -14,10 +14,10 @@ header {
   align-items: center;
 }
 #pass-mark {
-  background-color: green;
-  padding: 5px;
+  background-color: #22c55e;
+  padding: 5px 12px;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-size: 16px;
-  font-weight:700;
+  font-weight: 700;
 }

@@ -30,6 +30,11 @@ header {
   flex-direction: column;
   gap: 20px;
 }
+#quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .question {
   background-color: #0f172a;
   padding: 20px;
@@ -52,4 +57,34 @@ header {
   background-color: #22c55e;
   color: white;
   font-weight: bold;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+#submit {
+  background: linear-gradient(90deg, #2563eb, #22c55e);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#submit:hover {
+  background: linear-gradient(90deg, #1e40af, #15803d);
+}
+
+#restart {
+  background: linear-gradient(90deg, #f97316, #ef4444);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#restart:hover {
+  background: linear-gradient(90deg, #c2410c, #b91c1c);
 }

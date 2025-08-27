@@ -1,4 +1,3 @@
-// مثال: Named export
 export class Question {
   constructor(questionText, options) {
     this.question = questionText;
@@ -33,7 +32,6 @@ export class Question {
     });
 
     wrap.append(qText, opts);
-    this.el = wrap;
     return wrap;
   }
 }

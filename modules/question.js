@@ -2,7 +2,6 @@ export class Question {
   constructor(questionText, options) {
     this.question = questionText;
     this.options = options;
-    this.el = null;
   }
 
   create() {

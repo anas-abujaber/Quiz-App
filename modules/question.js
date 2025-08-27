@@ -21,9 +21,16 @@ export class Question {
       btn.type = "button";
       btn.textContent = opt;
 
-      // حدث التفعيل داخل create عشان يشتغل على العناصر الجديدة
+      // to remove active class if contains
       btn.addEventListener("click", () => {
-        opts.querySelectorAll(".option").forEach(b => b.classList.remove("active"));
+        if (btn.classList.contains("active")) {
+          btn.classList.remove("active");
+          return;
+        }
+
+        opts
+          .querySelectorAll(".option")
+          .forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
       });
 

@@ -50,11 +50,23 @@ header {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-.options-answer button {
+.option {
   height: 40px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background-color: #1e293b;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.option:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
 .option.active {
-  background-color: #22c55e;
+  background-color: orange;
   color: white;
   font-weight: bold;
 }

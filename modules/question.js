@@ -1,5 +1,6 @@
 export class Question {
-  constructor(questionText, options) {
+  constructor(questionId, questionText, options) {
+    this.id = questionId;
     this.question = questionText;
     this.options = options;
   }
@@ -7,6 +8,7 @@ export class Question {
   create() {
     const wrap = document.createElement("div");
     wrap.className = "question";
+    wrap.dataset.id = this.id;
 
     const qText = document.createElement("div");
     qText.className = "question-text";

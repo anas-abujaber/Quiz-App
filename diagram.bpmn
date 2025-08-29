@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-38422fae-e03e-43a3-bef4-bd33b32041b2" targetNamespace="http://bpmn.io/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.6.1">
+  <process id="Process_1" isExecutable="false">
+    <task id="Task_1hcentk" name="app.js">
+      <incoming>Flow_095a5ta</incoming>
+      <incoming>Flow_1r30m59</incoming>
+      <incoming>Flow_0earwjg</incoming>
+      <outgoing>Flow_1cocvr8</outgoing>
+      <outgoing>Flow_18fqfyi</outgoing>
+      <outgoing>Flow_18byky9</outgoing>
+    </task>
+    <task id="Activity_0yhaz9j" name="Question class">
+      <incoming>Flow_1cocvr8</incoming>
+      <outgoing>Flow_0e9uq0r</outgoing>
+    </task>
+    <task id="Activity_00q7qi1" name="questionsData (array data)">
+      <outgoing>Flow_095a5ta</outgoing>
+    </task>
+    <sequenceFlow id="Flow_095a5ta" name="load data to app" sourceRef="Activity_00q7qi1" targetRef="Task_1hcentk" />
+    <sequenceFlow id="Flow_1cocvr8" name="create q and append it in html" sourceRef="Task_1hcentk" targetRef="Activity_0yhaz9j" />
+    <task id="Activity_18redo4" name="html">
+      <incoming>Flow_0e9uq0r</incoming>
+      <incoming>Flow_18fqfyi</incoming>
+      <outgoing>Flow_1r30m59</outgoing>
+    </task>
+    <sequenceFlow id="Flow_0e9uq0r" name="append Q with Event handle" sourceRef="Activity_0yhaz9j" targetRef="Activity_18redo4" />
+    <sequenceFlow id="Flow_18fqfyi" name="catch chose Answer" sourceRef="Task_1hcentk" targetRef="Activity_18redo4" />
+    <sequenceFlow id="Flow_1r30m59" name="return chose Answer" sourceRef="Activity_18redo4" targetRef="Task_1hcentk" />
+    <task id="Activity_1i522e1" name="Storage class">
+      <incoming>Flow_18byky9</incoming>
+      <outgoing>Flow_0earwjg</outgoing>
+    </task>
+    <sequenceFlow id="Flow_18byky9" name="save chose Answer in localStorage" sourceRef="Task_1hcentk" targetRef="Activity_1i522e1" />
+    <sequenceFlow id="Flow_0earwjg" name="load chose answer" sourceRef="Activity_1i522e1" targetRef="Task_1hcentk" />
+  </process>
+  <bpmndi:BPMNDiagram id="BpmnDiagram_1">
+    <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="Task_1hcentk_di" bpmnElement="Task_1hcentk">
+        <omgdc:Bounds x="460" y="260" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0yhaz9j_di" bpmnElement="Activity_0yhaz9j">
+        <omgdc:Bounds x="750" y="100" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_00q7qi1_di" bpmnElement="Activity_00q7qi1">
+        <omgdc:Bounds x="170" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18redo4_di" bpmnElement="Activity_18redo4">
+        <omgdc:Bounds x="910" y="420" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1i522e1_di" bpmnElement="Activity_1i522e1">
+        <omgdc:Bounds x="180" y="350" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_095a5ta_di" bpmnElement="Flow_095a5ta">
+        <omgdi:waypoint x="270" y="120" />
+        <omgdi:waypoint x="400" y="120" />
+        <omgdi:waypoint x="400" y="300" />
+        <omgdi:waypoint x="460" y="300" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="290" y="133" width="79" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1cocvr8_di" bpmnElement="Flow_1cocvr8">
+        <omgdi:waypoint x="560" y="300" />
+        <omgdi:waypoint x="625" y="300" />
+        <omgdi:waypoint x="625" y="140" />
+        <omgdi:waypoint x="750" y="140" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="649" y="156" width="81" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0e9uq0r_di" bpmnElement="Flow_0e9uq0r">
+        <omgdi:waypoint x="850" y="140" />
+        <omgdi:waypoint x="960" y="140" />
+        <omgdi:waypoint x="960" y="420" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="883" y="106" width="71" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18fqfyi_di" bpmnElement="Flow_18fqfyi">
+        <omgdi:waypoint x="560" y="330" />
+        <omgdi:waypoint x="820" y="330" />
+        <omgdi:waypoint x="820" y="440" />
+        <omgdi:waypoint x="910" y="440" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="840" y="413" width="59" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1r30m59_di" bpmnElement="Flow_1r30m59">
+        <omgdi:waypoint x="910" y="460" />
+        <omgdi:waypoint x="510" y="460" />
+        <omgdi:waypoint x="510" y="340" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="680" y="426" width="62" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18byky9_di" bpmnElement="Flow_18byky9">
+        <omgdi:waypoint x="510" y="340" />
+        <omgdi:waypoint x="510" y="390" />
+        <omgdi:waypoint x="280" y="390" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="329" y="340" width="62" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0earwjg_di" bpmnElement="Flow_0earwjg">
+        <omgdi:waypoint x="230" y="350" />
+        <omgdi:waypoint x="230" y="310" />
+        <omgdi:waypoint x="460" y="310" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="253" y="276" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

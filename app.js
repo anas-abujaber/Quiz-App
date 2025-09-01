@@ -4,7 +4,6 @@ import { Storage } from "./modules/storage.js";
 
 const root = document.querySelector("#quiz");
 const submitBtn = document.getElementById("submit");
-const optionBtns = document.querySelectorAll(".option");
 const storage = new Storage("quiz_app");
 
 submitBtn.addEventListener("click", handleSubmit);
@@ -48,16 +47,16 @@ function handleSubmit() {
 }
 
 // Storage Event
-optionBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const qId = e.currentTarget.closest(".question").dataset.id;
-    const answer = e.currentTarget.textContent;
-    const item = { qId, answer };
-    storage.save(item);
-  });
+root.addEventListener("click", (e) => {
+  const btn = e.target.closest(".option");
+  if (!btn) return;
+
+  const qId = btn.closest(".question").dataset.id;
+  const answer = btn.textContent;
+  storage.save({ qId, answer });
 });
 
 // Event (reload page)
 document.addEventListener("DOMContentLoaded", () => {
-  console.log(storage.getAll()); 
+  console.log(storage.getAll());
 });

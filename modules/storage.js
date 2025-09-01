@@ -15,4 +15,9 @@ export class Storage {
     }
     localStorage.setItem(this.#key, JSON.stringify(parsed));
   }
+  getAll() {
+    const stored = localStorage.getItem(this.#key);
+    const parsed = JSON.parse(stored) ?? [];
+    return parsed;
+  }
 }

@@ -4,9 +4,11 @@ import { Storage } from "./modules/storage.js";
 
 const root = document.querySelector("#quiz");
 const submitBtn = document.getElementById("submit");
+const restartBtn = document.getElementById("restart");
 const storage = new Storage("quiz_app");
 
 submitBtn.addEventListener("click", handleSubmit);
+restartBtn.addEventListener("click", handleRestart);
 
 // Render Questions
 questionsData.forEach((q) => {
@@ -70,12 +72,24 @@ function alertScore(score, total) {
     return;
   }
 }
+function resetQuiz() {
+  if (!confirm("Are you sure you want to reset the quiz?")) return;
+  localStorage.removeItem("quiz_app");
+  document.querySelectorAll(".active").forEach((btn) => {
+    btn.classList.remove("active");
+  });
+}
+
 function handleSubmit() {
   const activeBtns = getActiveButtons();
   if (!confirmAllAnswered(activeBtns)) return;
   const userAnswers = getAllQuestions(activeBtns);
   const score = calculateScore(userAnswers);
   alertScore(score, questionsData.length);
+  resetQuiz();
+}
+
+function handleRestart() {
   resetQuiz();
 }
 

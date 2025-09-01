@@ -9,7 +9,11 @@ export class Storage {
     const parsed = JSON.parse(stored) ?? [];
     const idx = parsed.findIndex((x) => x.qId === item.qId);
     if (idx >= 0) {
-      parsed[idx] = item;
+      if (parsed[idx].answer === item.answer) {
+        parsed.splice(idx, 1);
+      } else {
+        parsed[idx] = item;
+      }
     } else {
       parsed.push(item);
     }

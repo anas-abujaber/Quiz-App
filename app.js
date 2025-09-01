@@ -58,5 +58,15 @@ root.addEventListener("click", (e) => {
 
 // Event (reload page)
 document.addEventListener("DOMContentLoaded", () => {
-  console.log(storage.getAll());
+    const savedAnswers = storage.getAll();
+    if (savedAnswers.length === 0) return;
+    
+    const btns = [...document.querySelectorAll(".option")];
+    savedAnswers.forEach((ans) => {
+        const btn = btns.find((b) => {
+        const qId = b.closest(".question").dataset.id;
+        return qId === ans.qId && b.textContent === ans.answer;
+        });
+        if (btn) btn.classList.add("active");
+    });
 });

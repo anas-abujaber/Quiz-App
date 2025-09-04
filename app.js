@@ -1,5 +1,5 @@
 import { Question } from "./modules/question.js";
-import { questionsData } from "./modules/questions.data.js";
+import { questionsData } from "./data/questions.data.js";
 import { Storage } from "./modules/storage.js";
 
 const root = document.querySelector("#quiz");
